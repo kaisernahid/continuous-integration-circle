@@ -8,3 +8,13 @@ jobs:
     executor: ci-executor
     steps:
       - checkout
+          
+      - run:
+          name: install dependencies
+          command: |
+            gem update --system
+            gem install bundler
+
+      - run:
+          name: notify build is finished
+          command: echo "The build is finished!"
